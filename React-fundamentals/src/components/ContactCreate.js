@@ -14,7 +14,7 @@ export default class ContactCreate extends React.Component {
     handleChange(e) {
         let nextState = {};
         nextState[e.target.name] = e.target.value;
-        this.setState(nextState)
+        this.setState(nextState);
     }
 
     handleClick() {

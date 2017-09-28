@@ -110,7 +110,7 @@ ContactDetails.defaultProps = {
 };
 
 ContactDetails.propTypes = {
-    contact : React.propTypes.object,
-    onRemove : React.propTypes.func,
-    onEdit : React.propTypes.func
+  contact: React.PropTypes.object,
+  onRemove: React.PropTypes.func,
+  onEdit: React.PropTypes.func
 }
