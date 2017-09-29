@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./App.css";
 import Movie from "./Movie";
 
-
 class App extends Component {
   constructor(props){
     super(props);
@@ -12,31 +11,10 @@ class App extends Component {
   //Render cycle : componentWillMount() -> render() -> componentDidMount()
   //Updating cycle : componentWillReceiveProps()-> shouldComponentUpdate()-> componentWillUpdate()->render()->componentDidUpdate()
 
-  componentDidMount(){
+  componentDidMount() {
     this._getMovies();
-    // setTimeout(() => {
-    //   this.setState({
-    //     movies : [
-    //       {
-    //         title: "matrix",
-    //         poster:"https://images-na.ssl-images-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UY1200_CR84,0,630,1200_AL_.jpg"
-    //       },
-    //       {
-    //         title: "Full Metal Jacket",
-    //         poster:"https://images-na.ssl-images-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UY1200_CR84,0,630,1200_AL_.jpg"
-    //       },
-    //       {
-    //         title: "Oldboy",
-    //         poster:"https://images-na.ssl-images-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UY1200_CR84,0,630,1200_AL_.jpg"
-    //       },
-    //       {
-    //         title: "star wars",
-    //         poster:"https://images-na.ssl-images-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UY1200_CR84,0,630,1200_AL_.jpg"
-    //       }
-    //     ]  
-    //   })
-    // }, 1000);
   }
+
   _renderMovies = () => {
    const movies =  this.state.movies.map((movie)=> {
       return (<Movie
@@ -49,7 +27,6 @@ class App extends Component {
       })
       return movies;
   }
-
 
   _callApi = () =>{
     return fetch('https://yts.ag/api/v2/list_movies.json?sort_by=rating')
@@ -71,11 +48,9 @@ class App extends Component {
     const movies = this.state;
     return (
       <div className={movies ? "App" : "App--loading"}>
-      {
-        //데이터가 없으면 loading이 뜨고 
-        //있으면 데이터를 _renderMovie함수 호출
-       this.state.movies ? this._renderMovies() : "Loading"
-      }
+        {/* 데이터가 없으면 loading이 뜨고 
+        있으면 데이터를 _renderMovie함수 호출 */}
+       {this.state.movies ? this._renderMovies() : "Loading"}
       </div>
     );
   }
