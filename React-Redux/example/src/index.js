@@ -4,15 +4,13 @@ import App from './components/App';
 
 import {createStore} from 'redux';
 import reducers from './Reducers';
-import * as actions from './actions';
 
 import {Provider} from 'react-redux';
 const store = createStore(reducers);
 
-console.log(store.getState());
+//console.log(store.getState());
 //subcribe의 반환값은 unsubscribe이다.
-const unsubscribe = store.subscribe(()=> console.log(store.getState()));
-
+//const unsubscribe = store.subscribe(()=> console.log(store.getState()));
 
 ReactDOM.render(
     <Provider store = {store}>

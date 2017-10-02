@@ -4,6 +4,6 @@ import ui from './ui'
 
 const reducers = combineReducers({
     counter, ui
-});;
+});
 
 export default reducers;
