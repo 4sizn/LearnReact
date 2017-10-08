@@ -37,6 +37,7 @@ class Counter extends Component {
     }
 } 
 
+//Store에 저장된 객체를 내장객체로 변환한다.
 const mapStateToProps = (state) => {
     return {
         number : state.counter.number,
