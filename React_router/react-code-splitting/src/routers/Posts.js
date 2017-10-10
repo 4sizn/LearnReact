@@ -1,14 +1,15 @@
-import React from 'react'
-import {Route, Link} from 'react-router-dom';
-
+import React from 'react';
+import {Route,Link} from 'react-router-dom';
 
 const Post = ({match}) => {
     return (
-        <h2>
-            {match.params.id}
-        </h2>
+        <div>
+            포스트 {match.params.id}
+        </div>
     );
 }
+
+
 const Posts = ({match}) => {
     return (
         <div>
@@ -25,5 +26,4 @@ const Posts = ({match}) => {
     );
 };
 
-export default Posts;
 export default Posts;
